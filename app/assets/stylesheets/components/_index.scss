@@ -1,0 +1,15 @@
+// Import your components CSS files here.
+@import "alert";
+@import "avatar";
+@import "form_legend_clear";
+@import "navbar";
+@import "banner";
+@import "card";
+@import "cards";
+@import "trip_card";
+
+.banner {
+  text-align: center;
+  align-items: center;
+  margin-bottom: 30px;
+}

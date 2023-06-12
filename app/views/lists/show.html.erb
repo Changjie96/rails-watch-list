@@ -1,0 +1,27 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><strong><%= @list.name %></strong></h1>
+  </div>
+</div>
+
+<div class="container">
+  <ul>
+    <% @list.movies.each do |movie| %>
+    <li>
+      <div class="card-trip">
+        <img src="<%= movie.poster_url %>"/>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= movie.title %></h2>
+            <p><%= movie.rating %></p>
+            <p><%= movie.overview %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= movie.bookmarks.first.comment %></h2>
+        </div>
+      </div>
+        <%= link_to 'Delete', bookmark_path(movie.bookmarks.first), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </li>
+    <% end %>
+  </ul>
+  <%= link_to "Add movie", new_list_bookmark_path(@list) %>
+</div>
