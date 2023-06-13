@@ -5,6 +5,10 @@
 </div>
 
 <div class="container">
+  <div class="row d-flex justify-content-between mb-4">
+    <%= link_to "Add movie", new_list_bookmark_path(@list), class: "btn btn-success col-md-2" %>
+    <%= link_to "Back to Home", root_path, class: "btn btn-success col-md-2"%>
+  </div>
   <ul>
     <% @list.movies.each do |movie| %>
     <li>
@@ -23,5 +27,5 @@
     </li>
     <% end %>
   </ul>
-  <%= link_to "Add movie", new_list_bookmark_path(@list) %>
+
 </div>
